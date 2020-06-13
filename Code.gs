@@ -1,6 +1,6 @@
 /*
 @author Steph AKA Lixx
-{@link https://github.com/stephannapolis GitHub}.
+@link https://github.com/stephannapolis GitHub.
 */
 
 //POST_URL is the webhook URL. https://support.discordapp.com/hc/en-us/articles/228383668-Intro-to-Webhooks
@@ -18,7 +18,10 @@ function onSubmit(e) {
   
   var options = {
     "method": "post",
-    "payload": JSON.stringify({
+    "headers": {
+        "Content-Type": "application/json",
+      },
+      "payload": JSON.stringify({
       "content": roleID,
       "embeds": [{
         "title": "New Application in Queue!",
